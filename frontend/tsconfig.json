@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": ".next", // Output directory for Next.js
+    "allowJs": true, // Allow JavaScript files (Next.js uses.js files)
+    "isolatedModules": true // Recommended for Next.js
+  },
+  "include": [
+    "pages/**/*", // Include Next.js pages
+    "components/**/*", // Include components (if you have a components directory)
+    "utils/**/*", // Include utility functions (if you have a utils directory)
+    "lib/**/*" // Include other TypeScript files (if needed)
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
