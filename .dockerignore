@@ -1,6 +1,5 @@
-node_modules.git.DS_Store.env.vscode       # JetBrains IDE (IntelliJ, PyCharm, etc.).vscode      # VS Code
-__pycache__  # Python bytecode
-*.pyc        # Python bytecode (alternative)
-*.log        # Log files (if you have any)
-tmp/         # Temporary files
-temp/        # Temporary files (alternative)
+ßnode_modules
+.git
+.env
+test
+*.test.js

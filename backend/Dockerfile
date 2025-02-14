@@ -1,10 +1,25 @@
-FROM python:3.9-slim-buster
+# Builder stage
+FROM node:18-alpine AS builder
 
-WORKDIR /app
+WORKDIR /app/backend
 
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
+COPY package*.json ./
+RUN npm install
 
 COPY . .
 
-CMD ["python", "app.py"]
+RUN npm run build
+
+# Runner stage
+FROM node:18-alpine AS runner
+
+WORKDIR /app/backend
+
+COPY --from=builder /app/backend/dist ./dist
+COPY --from=builder /app/backend/package*.json ./
+RUN npm install
+
+ENV NODE_ENV development 
+
+EXPOSE 8080
+CMD ["node", "dist/index.js"]
