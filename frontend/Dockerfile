@@ -17,6 +17,7 @@ WORKDIR /app
 
 COPY --from=builder /app/frontend/.next /app/./.next
 COPY --from=builder /app/frontend/public ./public
+COPY --from=builder /app/frontend/pages ./pages
 COPY --from=builder /app/frontend/package*.json ./
 
 RUN npm install
